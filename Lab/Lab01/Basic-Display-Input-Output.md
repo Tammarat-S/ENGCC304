@@ -43,6 +43,8 @@ int main() {
 ```bash
 Enter your name: Tammarat_Suriyawong
 Enter you age: 18
+
+
 ```
 ### Output
 ```bash
