@@ -43,19 +43,17 @@ int main() {
 ```bash
 Enter your name: Tammarat_Suriyawong
 Enter you age: 18
-
+```
 ![Screenshot 2025-07-03 120720](https://github.com/user-attachments/assets/e44d12ef-24c3-46aa-845e-da89404e4b16)
 
-```
+
 ### Output
 ```bash
 - - - - - -
 Hello Tammarat_Suriyawong
 Age = 18
-
-![image](https://github.com/user-attachments/assets/1533c7ae-5230-46ec-878e-f12361f1b782)
-
 ```
+![image](https://github.com/user-attachments/assets/1533c7ae-5230-46ec-878e-f12361f1b782)
 
 ## มาตรฐานการตรวจตามหลักการเรียนรู้ของบลูม
 | ลำดับการเรียนรู้ | เกณฑ์การวัด | คะแนน |
