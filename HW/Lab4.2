@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(){
+    char ID[11] ;
+    int hrs = 0 , salaly = 0 ;
+    float sum = 0 ;
+    printf( "Input the Employees ID(Max. 10 chars):\n" ) ;
+    scanf( "%s" , ID ) ;
+    printf( "Input working hours:\n" ) ;
+    scanf( "%d" , &hrs ) ;
+    printf( " Salary amouth/hr:\n" ) ;
+    scanf( "%d" , &salaly ) ;
+    printf( "Expected output:\n" );
+    printf( "Employees ID:%s\n" , ID ) ;
+    //----| คำนวณเงินเที่จะได้
+    printf( "Salary = U$ %.2f\n" , sum = hrs * salaly ) ;
+    return 0 ;
+}//end main function
