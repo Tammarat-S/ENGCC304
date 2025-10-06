@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int days = 0 , sec = 0 ;// สร้างตัวแปร days และ sec
+    printf( " Enter days : " ) ;
+    scanf( "%d" , &days ) ;
+    //----| ตรวจสอบค่าที่รับมา
+    if(days <= 0){
+        printf( "please enter correct days");
+        return 0 ;
+    }
+    //----| แปลงวันเป็นวินาที
+    sec = days * 24 * 60 * 60 ;
+    printf( " %d seconds" , sec ) ;
+    return 0 ;
+}//end main function
