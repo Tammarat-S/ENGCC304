@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main(){
+    char ID[11] ;
+    int hrs = 0 , salaly = 0 ; // ชั่วโมงทำงาน , เงินเดือนต่อชั่วโมง
+    int sum = 0 ; // เงินเดือนรวม
+    printf( "Input the Employees ID(Max. 10 chars):\n" ) ;
+    scanf( "%s" , ID ) ;
+    printf( "Input working hours:\n" ) ;
+    scanf( "%d" , &hrs ) ;
+    printf( "Salary amouth/hr:\n" ) ;
+    scanf( "%d" , &salaly ) ;
+    printf( "Expected output:\n" );
+    printf( "Employees ID: %s\n" , ID ) ;
+    sum = hrs * salaly ; // คำนวณเงินเดือนรวม
+    int group[10] ; // ใช้ array ชั่วคราวเพื่อเก็บกลุ่มตัวเลข
+    int point = 0 ; 
+    //----| แยกกลุ่มละ 3 หลักจากขวาไปซ้าย
+    while ( sum > 0 ) {
+        group[point++] = sum % 1000 ;
+        sum /= 1000 ;
+    }//end while
+    printf("Salary = U$ ") ;
+    //----| แสดงผลจากซ้ายไปขวา
+    for ( int i = point - 1 ; i >= 0 ; i-- ) {
+        if ( i == point - 1 )
+            printf( "%d" , group[i] ) ;
+        else
+            printf( ",%03d" , group[i] ) ; 
+    }//end for
+    printf( ".%02d\n" , sum ) ; // ทศนิยม 2 ตำแหน่ง
+    return 0 ;
+}//end main
