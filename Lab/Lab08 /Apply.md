@@ -1,3 +1,4 @@
+```c++
 #include <stdio.h>
 
 int main(){
@@ -73,3 +74,4 @@ int main(){
     printf( "Total Salary:  %d THB\n" ,totalsalary ) ;
     return 0 ;
 }//end function
+```
