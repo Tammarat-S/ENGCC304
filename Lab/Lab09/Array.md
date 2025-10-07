@@ -46,4 +46,8 @@ int main(){
         return 0 ; //คืนค่า 0 เพื่อจบการทำงาน
     }//end function
    ```
+## TEST CASE
+### Input & Output
+<img width="401" height="312" alt="Screenshot 2025-10-07 140833" src="https://github.com/user-attachments/assets/934125b9-b764-4446-bf58-93a53c64aa16" />
+
 
