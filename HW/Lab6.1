@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {                                                                                                            
+    int num = 0 ;  // ตัวเลขที่รับเข้ามา                                                                                                           
+    char *one[11] = { "" , "One" , "Two" , "Three" , "Four" , "Five" , "Six" , "Seven" , "Eight" , "Nine" } ;
+    char *ten[11] = { "Ten" , "Eleven" , "Twelve" , "Thirteen" , "Fourteen" , "Fifteen" , "Sixteen" , "Seventeen" , "Eighteen" , "Nineteen" } ;
+    char *teen[11] = { "" , "" , "Twenty" , "Thirty" , "Forty" , "Fifty" , "Sixty" , "Seventy" , "Eighty" , "Ninety" } ;
+
+
+    printf( "enter number : " ) ; 
+    //----| รับค่าตัวเลข 0-99 และตรวจสอบความถูกต้อง                                                                                      
+    while ( scanf( "%d" , &num ) != 1 || num > 99 || num < 0 ) {                                                                                
+        printf( "number only: " ) ;
+        while( getchar() != '\n' ) ; // เคลียร์ ตัวอักษรที่ไม่ใช่ตัวเลข                         
+    }//end while                                                                                                                   
+    if( num == 0 ) { 
+        printf( "Zero" ) ;                                                                                                   
+    }//end if                                                                                                        
+    if ( num >= 20 ) {                                                                                                  
+        printf( "%s " , teen[ num / 10 ] ) ;
+        num = num % 10 ;
+    }//end if
+    if ( num >= 10 ) {                                                                                            
+        printf( "%s " , ten[ num - 10 ] ) ;
+    }//end if                                                                                                              
+    if ( num > 0 && num < 10 ) {
+        printf( "%s " , one[ num ] ) ;                                                                                  
+    }//end if
+    return 0 ;
+}//end main                
