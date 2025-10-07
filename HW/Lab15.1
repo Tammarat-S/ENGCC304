@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main() {
+    FILE *fp ;                          //ประกาศตัวแปรสำหรับจัดการไฟล์
+    char text[50][50] ;                 //ประกาศตัวแปรสำหรับเก็บคำคำละไม่เกิน 50 ตัวอักษร
+    int i = 0 ;
+    char Fn[50] ; // ประกาศตัวแปรเก็บชื่อไฟล์
+    printf( "Enter file name:\n" ) ;                   
+    scanf( "%s" , Fn ) ;
+    fp =fopen( Fn , "r" ) ;        
+    //----|ตรวจสอบว่าเปิดไฟล์สำเร็จหรือไม่
+    if ( fp == NULL ) {
+        printf( "File open error\n" ) ;
+        exit(0) ;
+    }// end if
+    //----|อ่านข้อมูลจากไฟล์จนหมดและนับจำนวนคำ
+    while(fscanf( fp, "%s" , text[i] ) != EOF ) {
+        i++ ;
+    }// end while
+    fclose( fp ) ;                //ปิดไฟล์
+    printf( "Total number of words in '%s' is ", Fn ) ;      
+    printf( "%d word" , i ) ;
+    return 0 ;
+}// end function
