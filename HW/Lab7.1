@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(){
+    int guess ;
+    int randomnumber ;
+    int play ;
+    bool condition = true ;    
+    do{
+        //int play = -2 ;
+        int score = 100 ;
+        int min = 1 ;
+        int max = 100 ; 
+        printf( "Do you want to play game (1 = play , -1 = exit) :\n" ) ;
+        scanf( "%d" , &play ) ;
+        //----|ตรวจสอบว่าจะเล่นเกมต่อหรือไม่
+        if ( play == -1 ) {
+            printf("see you again") ;
+            condition = false ;
+            break;
+        }else if  (play != 1 && play != -1){
+            printf("Please enter only 1 or -1.\n") ;  
+            while (getchar() != '\n');
+            continue ;
+        }// end if
+        printf("score(%d)\n",score) ;
+        srand(time(NULL)) ;     //----|สุ่มเลขตามเวลาปัจจุบัน
+        randomnumber = rand() % 100 + 1 ; //สุ่มเลข 1-100
+        //----|ทายเลขและคำนวณคะแนน
+        do{
+            if(score <= 0){
+                printf("You lose! the winning number is %d \n",randomnumber ) ;
+                break;
+                }// end if
+            printf("Guess the winning number (%d-%d) :\n",min, max) ;
+            scanf("%d", &guess) ;
+            if(guess == randomnumber){
+                printf("That is correct! The winning number is %d.\n", randomnumber) ;
+                printf("Score this game: %d\n", score) ;
+                break;
+            }// end if
+            else if(guess < min || guess > max){
+                printf("Please enter a number between %d and %d.\n", min, max) ;
+                continue ;
+            } // end if
+            if(guess > randomnumber){
+                printf("Sorry, the winning number is LOWER than %d.", guess) ;
+                printf("Score = %d\n", score -= 10) ;
+                max = guess - 1 ;
+            }else{
+                printf("Sorry, the winning number is HIGHER than %d.", guess) ;
+                printf("Score = %d\n", score -= 10) ;
+                min = guess + 1 ;
+            }// end if
+        }while (true) ;
+    }while (true) ;
+    return 0 ;
+} // end main
