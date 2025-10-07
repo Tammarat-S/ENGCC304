@@ -75,3 +75,6 @@ int main(){
     return 0 ;
 }//end function
 ```
+## TEST CASE
+### Input & Output
+<img width="424" height="175" alt="Screenshot 2025-10-07 135917" src="https://github.com/user-attachments/assets/9689dacc-16be-4572-ba37-6189b9423f60" />
