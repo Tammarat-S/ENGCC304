@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+ // ตั้ง -1 เพราะกัน input ที่เป็นอักษร
+
+int main()
+{   
+    int input = -1 ;// ตั้ง -1 เพราะกัน input ที่เป็นอักษร
+    printf("enter value: \n") ;
+    scanf("%d", &input) ;
+    if (input < 0)
+    {
+        printf("กรุณาใส่ตัวเลข\n") ;
+        return 0 ; // ทำการจบการทำงาน
+    } // end if
+    else if (input % 2 == 0)// ตรวจสอบว่าเป็นเลขคู่หรือไม่
+    {
+        printf("Series: ") ;
+        for (int i = input; i >= 0; i--) //สำหรับเลขคู่
+        {
+            if (i % 2 == 0)
+            {
+                printf("%d ", i);
+            } // end if
+        } // end for
+    } // end else if
+    else if (input % 2 != 0)// ตวรวจสอบว่าเป็นเลขคี่หรือไม่
+    {
+        printf("Series: ");
+        for (int i = 0; i <= input; i++) {//สำหรับเลขคี่
+            if (i % 2 != 0){
+                printf("%d ", i);
+            } // end if
+        } // end for
+    } // end else if
+    return 0;
+} // end function
