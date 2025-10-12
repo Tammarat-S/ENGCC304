@@ -1,1 +1,27 @@
+#include <stdio.h>
+#include <string.h>
 
+void swap(int *a, int *b) ;
+
+int main(){
+    int num1 = 0 , num2 = 0 ; //ตัวแปรเก็บค่าจำนวนเต็มที่รับเข้ามา
+    
+    printf("Enter num1: \n") ;
+    scanf("%d",&num1) ;
+    printf("Enter num2: \n") ;
+    scanf("%d",&num2) ;
+    int *ptr1 = &num1 ; //สร้างผีตัวที่หนึ่งเก็บที่อยู่ของตัวแปร num1
+    int *ptr2 = &num2 ; //สร้างผีตัวที่สองเก็บที่อยู่ของตัวแปร num2
+    printf("Before swapping(num1 & num2) :%d, %d\n", num1, num2) ;
+    swap(ptr1, ptr2) ; //เรียกใช้ฟังก์ชัน swap โดยส่งที่อยู่ของตัวแปร num1 และ num2 เข้าไป
+    printf("After swapping(num1 & num2) :%d, %d\n", num1, num2) ;
+    return 0 ;
+
+}//end main
+
+//-----|ฟังก์ชั่นสลับค่าใช้การบวกและลบในการสลับค่า
+void swap(int *a, int *b){
+    *a = *a + *b; 
+    *b = *a - *b ; 
+    *a = *a - *b  ;
+}//end swap
