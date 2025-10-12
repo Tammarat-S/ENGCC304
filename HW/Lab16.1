@@ -1,0 +1,47 @@
+
+#include <stdio.h>
+
+int main() {
+    int arr[] = {15, 7, 25, 3, 73, 32, 45};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int i, j, temp, pos = -1;
+
+    // แสดงข้อมูลเดิม
+    printf("Old Series : ");
+    for (i = 0; i < size; i++) {
+        printf("%d", arr[i]);
+        if (i < size - 1) printf(", ");
+    }
+    printf("\n");
+
+    // เรียงข้อมูลจากน้อยไปมากด้วย Bubble Sort
+    for (i = 0; i < size - 1; i++) {
+        for (j = 0; j < size - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    // แสดงข้อมูลที่เรียงแล้ว
+    printf("New Series : ");
+    for (i = 0; i < size; i++) {
+        printf("%d", arr[i]);
+        if (i < size - 1) printf(", ");
+        if (arr[i] == 32) {
+            pos = i;
+        }
+    }
+    printf("\n");
+
+    // แสดงตำแหน่งของเลข 32
+    if (pos != -1) {
+        printf("Pos of 32 : %d\n", pos);
+    } else {
+        printf("32 not found in the array.\n");
+    }
+
+    return 0;
+}
