@@ -1,36 +1,29 @@
 #include <stdio.h>
 
- // ตั้ง -1 เพราะกัน input ที่เป็นอักษร
+void swap( int * , int *) ;
 
-int main()
-{   
-    int input = -1 ;// ตั้ง -1 เพราะกัน input ที่เป็นอักษร
-    printf("enter value: \n") ;
-    scanf("%d", &input) ;
-    if (input < 0)
-    {
-        printf("กรุณาใส่ตัวเลข\n") ;
-        return 0 ; // ทำการจบการทำงาน
-    } // end if
-    else if (input % 2 == 0)// ตรวจสอบว่าเป็นเลขคู่หรือไม่
-    {
-        printf("Series: ") ;
-        for (int i = input; i >= 0; i--) //สำหรับเลขคู่
-        {
-            if (i % 2 == 0)
-            {
-                printf("%d ", i);
-            } // end if
-        } // end for
-    } // end else if
-    else if (input % 2 != 0)// ตวรวจสอบว่าเป็นเลขคี่หรือไม่
-    {
-        printf("Series: ");
-        for (int i = 0; i <= input; i++) {//สำหรับเลขคี่
-            if (i % 2 != 0){
-                printf("%d ", i);
-            } // end if
-        } // end for
-    } // end else if
-    return 0;
-} // end function
+int main(){
+    int num1 , num2 ;
+    printf("Enter num1: \n");
+    while (scanf("%d", &num1) != 1) {
+        return 1 ;    
+    }
+
+    printf("Enter num2: \n");
+    while (scanf("%d", &num2) != 1) {
+        return 1 ;
+    }
+
+    printf("--- pointer modification report---\n") ;
+    printf("1. value before swap num1: %d num2: %d\n" , num1 , num2 ) ;
+    swap( &num1 , &num2 ) ;
+    printf("2. value after swap num1: %d num2: %d\n" , num1 , num2 ) ;
+
+    return 0 ;
+}
+
+void swap( int *a , int *b ) {
+    *a = *a + *b ;
+    *b = *a - *b ;
+    *a = *a - *b ;
+}
